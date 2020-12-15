@@ -1,3 +1,38 @@
 :root{
   font-size: 16px;
+
+  --df-magin: 5px;
+  --df-padding: 5px;
+  --df-border-radius: 10px;
+  --df-content-width: 1000px;
+
+    --colors-hover: rgb(143, 180, 235);
+    --colors-primary: rgb(10, 133, 235);
+  }
+
+.top-nav-bar ul{
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.top-nav-bar ul li{
+  margin: var(--df-magin);
+  padding: var(--df-padding);
+}
+
+.top-nav-bar ul li.active a{
+  color: var(--colors-primary);
+}
+
+a:visited{
+  color: initial;
+}
+
+a{
+  color: initial;
+  text-decoration: none;
+}
+
+a:hover{
+  color: initial;
 }

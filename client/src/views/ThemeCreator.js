@@ -1,54 +1,43 @@
-import '../styles/ThemeCreator.css';
-import React from 'react';
+import "../styles/ThemeCreator.css";
+import React from "react";
 import cx from "classnames";
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  withRouter,
 } from "react-router-dom";
 
-import CreateAccount from './CreateAccount';
-import CreateElement from './CreateElement';
-import CreateTheme from './CreateTheme';
-import ExploreElements from './ExploreElements';
-import ExploreThemes from './ExploreThemes';
+import CreateAccount from "./CreateAccount";
+import CreateElement from "./CreateElement";
+import CreateTheme from "./CreateTheme";
+import ExploreElements from "./ExploreElements";
+import ExploreThemes from "./ExploreThemes";
+import Main from "./Main";
+
+// components
+import NavBar from "../components/NavBar";
 
 class ThemeCreator extends React.Component {
-  render(){
+  constructor(props) {
+	super(props);
+  }
+
+  render() {
     return (
       <Router>
-      <div>
-        <nav className={cx()}>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-
-          </Route>
-          <Route path="/users">
-
-          </Route>
-          <Route path="/">
-
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <NavBar onClick={() => {this.refreshNav();}} />
+        <main>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/create-account" component={CreateAccount} />
+          <Route exact path="/create-element" component={CreateElement} />
+          <Route exact path="/create-theme" component={CreateTheme} />
+          <Route exact path="/element-explorer" component={ExploreElements} />
+          <Route exact path="/theme-explorer" component={ExploreThemes} />
+        </main>
+      </Router>
     );
   }
 }

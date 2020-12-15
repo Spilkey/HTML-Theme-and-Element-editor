@@ -1,6 +1,10 @@
 import React from 'react';
 
-class CreateAccount extends Reacts.Components {
+class CreateAccount extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
             <div>

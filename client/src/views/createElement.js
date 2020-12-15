@@ -1,6 +1,10 @@
 import React from 'react';
 
-class CreateElement extends React.Components {
+class CreateElement extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
             <div>

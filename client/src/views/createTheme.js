@@ -1,6 +1,10 @@
 import React from 'react';
 
-class CreateTheme extends React.Components {
+class CreateTheme extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
             <div>
