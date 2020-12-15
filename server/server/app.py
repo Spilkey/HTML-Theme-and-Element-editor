@@ -8,4 +8,4 @@ def getRoot():
 @app.route("/app/", defaults={"path": "index.html"})
 @app.route("/app/<path:path>")
 def getApp(path):
-    return app.send_static_file(path)
+    return app.send_static_file(path) 

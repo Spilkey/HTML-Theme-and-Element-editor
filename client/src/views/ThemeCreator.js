@@ -22,14 +22,21 @@ import NavBar from "../components/NavBar";
 
 class ThemeCreator extends React.Component {
   constructor(props) {
-	super(props);
+    super(props);
   }
 
   render() {
     return (
       <Router>
-        <NavBar onClick={() => {this.refreshNav();}} />
+        <NavBar
+          onClick={() => {
+            this.refreshNav();
+          }}
+        />
         <main>
+          <div className="top-main">
+            <div className="top-main-1"></div>
+          </div>
           <Route exact path="/" component={Main} />
           <Route exact path="/create-account" component={CreateAccount} />
           <Route exact path="/create-element" component={CreateElement} />

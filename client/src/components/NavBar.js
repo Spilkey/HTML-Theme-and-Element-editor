@@ -23,25 +23,25 @@ class NavBar extends React.Component {
       <nav className="top-nav-bar">
         <ul>
           <li className={cx("", this.state.location == "/" && "active")}>
-            <Link to="/">Home</Link>
+            <div><Link to="/">Home</Link></div>
           </li>
           <li
             className={cx("", this.state.location == "/create-element" && "active")}
           >
-            <Link to="/create-element">Create Element</Link>
+            <div><Link to="/create-element">Create Element</Link></div>
           </li>
           <li className={cx("", this.state.location == "/create-theme" && "active")}>
-            <Link to="/create-theme">Create a Theme</Link>
+            <div><Link to="/create-theme">Create a Theme</Link></div>
           </li>
           <li
             className={cx("", this.state.location == "/element-explorer" && "active")}
           >
-            <Link to="/element-explorer">Explore Elements</Link>
+            <div><Link to="/element-explorer">Explore Elements</Link></div>
           </li>
           <li
             className={cx("", this.state.location == "/theme-explorer" && "active")}
           >
-            <Link to="/theme-explorer">Explore Themes</Link>
+            <div><Link to="/theme-explorer">Explore Themes</Link></div>
           </li>
         </ul>
       </nav>
