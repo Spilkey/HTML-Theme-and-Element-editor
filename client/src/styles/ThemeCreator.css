@@ -1,21 +1,71 @@
 :root {
   font-size: 16px;
 
-  --df-magin: 5px;
-  --df-padding: 5px;
+  --df-margin: 10px;
+  --df-padding: 7.5px;
   --df-border-radius: 10px;
   --df-content-width: 1000px;
+  --df-header-height: 70px;
+  --df-top-main-height: 500px;
 
-  --colors-hover: rgb(143, 180, 235);
-  --colors-primary: rgb(10, 133, 235);
-  --colors-grey: rgb(181, 218, 211);
+  --colors-hover: #4a6d88;
+  --colors-light-hover: #275377;
+  --colors-primary: #001e38;
+  --colors-grey: #010c1e;
+  --colors-focused: #ffffff;
+  --colors-unfocused: #c6cdd7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--colors-unfocused);
+}
+
+button {
+  border: none;
+  background: var(--colors-hover);
+  border-radius: var(--df-border-radius);
+  color: var(--colors-focused);
+  transition: color 500ms, box-shadow 500ms, background 500ms,
+    border-radius 500ms;
+}
+
+button:hover {
+  box-shadow: 0px 0px 10px black;
+  transition: color 500ms, box-shadow 500ms, background 500ms,
+    border-radius 500ms;
+  background: var(--colors-light-hover);
+  cursor: pointer;
+  border-radius: calc(var(--df-border-radius) * 2);
+}
+
+button.small {
+  height: 40px;
+  min-width: 100px;
+}
+
+button.medium {
+  height: 50px;
+  min-width: 150px;
+  font-size: 1.1rem;
+}
+
+button.large {
+  height: 70px;
+  min-width: 200px;
+  font-size: 1.3rem;
 }
 
 .top-nav-bar ul {
   list-style-type: none;
   display: inline-flex;
   margin: 0;
-  height: 10vh;
+  padding: var(--df-padding);
+  height: var(--df-header-height);
 }
 
 .top-nav-bar ul li {
@@ -34,40 +84,20 @@
 
 .top-nav-bar ul li a {
   padding: calc(var(--df-padding) * 3);
+  color: var(--colors-unfocused);
 }
 
 .top-nav-bar ul li.active a {
-  color: white;
+  color: var(--colors-focused);
 }
 
 .top-nav-bar ul li.active {
   background: var(--colors-primary);
-  box-shadow: 0px 0px 20px var(--colors-primary);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 main {
-  height: 90vh;
-}
-.top-main{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-.top-main-1 {
-  
-  border: 4px solid transparent;
-  padding: 2rem;
-  height: 3rem;
-  width:80vw;
-  border-radius: 100.5rem 0 3.5rem 2.5rem;
-  background: linear-gradient(var(--colors-grey), var(--colors-grey))
-      padding-box,
-    linear-gradient(90deg, var(--colors-primary), var(--colors-hover)) 0/50% no-repeat border-box,
-    linear-gradient(-90deg, var(--colors-grey), var(--colors-hover) 37.5vw, rgba(237, 79, 50, 0)) 100%
-      101%/65% 75% no-repeat border-box;
+  height: calc(100vh - var(--df-header-height));
 }
 
 a:visited {

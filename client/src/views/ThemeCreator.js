@@ -34,9 +34,6 @@ class ThemeCreator extends React.Component {
           }}
         />
         <main>
-          <div className="top-main">
-            <div className="top-main-1"></div>
-          </div>
           <Route exact path="/" component={Main} />
           <Route exact path="/create-account" component={CreateAccount} />
           <Route exact path="/create-element" component={CreateElement} />
