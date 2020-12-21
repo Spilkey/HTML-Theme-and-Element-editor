@@ -14,6 +14,7 @@
 
 .theme-step.active {
   width: auto;
+  height: auto;
 }
 
 .theme-step .bottom div.content {
@@ -59,4 +60,11 @@
 }
 .theme-step .content{
     margin: var(--df-margin);
+}
+
+.colors-row{
+  display: flex;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
 }
