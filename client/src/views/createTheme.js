@@ -1,5 +1,10 @@
 import React from "react";
 
+import StaticStepper from '../components/StaticStepper'
+import ColorPaletteSelector from '../components/ColorPaletteSelector'
+import FontSelector from '../components/FontPicker';
+import FontSizer from '../components/FontSize'
+
 import "../styles/CreateTheme.css";
 
 class CreateTheme extends React.Component {
@@ -10,26 +15,9 @@ class CreateTheme extends React.Component {
   render() {
     return (
       <div className="create-theme-main">
-        <div className="theme-step active">
-          <div className="top">
-            <div className="step-number">1</div>
-            <div className="title">Step 1</div>
-          </div>
-          <div className="bottom">
-            <div className="line"></div>
-            <div className="content">Color Picker Here</div>
-          </div>
-        </div>
-        <div className="theme-step active">
-          <div className="top">
-            <div className="step-number">2</div>
-            <div className="title">Step 1</div>
-          </div>
-          <div className="bottom">
-            <div className="line"></div>
-            <div className="content">Font Picker</div>
-          </div>
-        </div>
+        <StaticStepper stepNumber="1" stepTitle="Color Palette" content={<ColorPaletteSelector/>}/>
+        <StaticStepper stepNumber="2" stepTitle="Font Picker" content={<FontSelector/>}/>
+        <StaticStepper stepNumber="3" stepTitle="Font Size" content={<FontSizer/>}/>
       </div>
     );
   }
