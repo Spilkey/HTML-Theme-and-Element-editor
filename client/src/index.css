@@ -13,5 +13,6 @@ code {
 }
 body{
   background: var(--colors-grey);
+  overflow: hidden;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');

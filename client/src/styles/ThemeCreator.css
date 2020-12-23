@@ -8,7 +8,7 @@
   --df-header-height: 70px;
   --df-top-main-height: 500px;
 
-  --colors-hover:#77b1dd;
+  --colors-hover:#2c5f8a;
   --colors-light-hover: #275377;
   --colors-primary: #001e38;
   --colors-grey: #010c1e;
@@ -97,7 +97,13 @@ button.large {
 }
 
 main {
-  height: calc(100vh - var(--df-header-height));
+  height: calc(100vh - var(--df-header-height) - var(--df-margin) * 4);
+  padding: calc(var(--df-margin) * 4) 0px;
+  padding-bottom: 0px;
+  overflow-y: auto;
+}
+main > * {
+  height: auto;
 }
 
 a:visited {
