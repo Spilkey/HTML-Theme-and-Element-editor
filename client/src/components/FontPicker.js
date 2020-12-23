@@ -4,6 +4,8 @@ import FontPicker from "font-picker-react";
 
 import '../styles/FontPicker.css'
 
+import env from 'react-dotenv';
+
 class FontSelector extends React.Component {
     constructor(props){
         super(props);
@@ -16,7 +18,7 @@ class FontSelector extends React.Component {
         return (
             <div>
                 <FontPicker
-                apiKey="AIzaSyDv842R4CjWGDqZ8sTlMI4FcyX-VXnfmtA"
+                apiKey={env.REACT_APP_FONTS_API_KEY}
                 activeFontFamily={this.state.activeFontFamily}
                 onChange={(nextFont) =>
                     this.setState({
